@@ -14,3 +14,11 @@ class StackList:
 
     def is_empty(self): #if self.list is empty, it returns as false
         return not self.list #we use not, to reverse the boolean to true
+    
+    def size(self):
+        return len(self.list)
+    
+    def peek(self):
+        if self.is_empty():
+            return None
+        return self.list[0]

@@ -23,7 +23,31 @@ def test_stack_is_empty():
     stack.push(1)
     assert stack.is_empty() == False
 
+def test_size():
+    stack = StackList()
+    assert stack.size() == 0
+    stack.push(5)
+    assert stack.size() == 1
+    stack.push(10)
+    stack.push(15)
+    assert stack.size() == 3
+    stack.pop()
+    assert stack.size() == 2
+
+def test_peek():
+    stack = StackList()
+    assert stack.peek() is None
+    stack.push(5)
+    assert stack.peek() == 5
+    stack.push(10)
+    stack.push(15)
+    assert stack.peek() == 15
+    stack.pop()
+    assert stack.peek() == 10
+
 if __name__ == "__main__":
     test_stack_push()
     test_stack_is_empty()
     test_stack_pop()
+    test_size()
+    test_peek()
