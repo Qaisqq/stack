@@ -1,6 +1,13 @@
 class StackList:
     def __init__(self): 
-        self.list = []  
+        self.list = []
+
+    def __repr__(self):
+        stack_str = "Stack:\n"
+        for item in self.list:
+            stack_str += f"| {item} |\n"
+        stack_str += "----\n"
+        return stack_str  
 
     def push(self, data): #the push'd data will always be index 0
         self.list[:0] = [data]
