@@ -1,4 +1,5 @@
 from stack_list import StackList
+from stack_linked_list import StackLinkedList
 
 def test_stack_push():
     stack = StackList()
@@ -44,6 +45,27 @@ def test_peek():
     assert stack.peek() == 15
     stack.pop()
     assert stack.peek() == 10
+#  ^ list Stack tests
+#  v linkedlist stack tests
+def test_stack():
+    stack = StackLinkedList()
+    assert stack.is_empty() == True
+    stack.push(1)
+    assert stack.is_empty() == False
+    assert stack.peek() == 1
+    stack.push(2)
+    assert stack.peek() == 2
+    assert stack.pop() == 2
+    assert stack.pop() == 1
+    assert stack.pop() == None
+    assert stack.is_empty() == True
+    stack.push(9)
+    stack.push(2)
+    stack.push(6)
+    stack.push(1)
+    stack.push(5)
+    stack.push(3)
+    print(stack)    
 
 if __name__ == "__main__":
     test_stack_push()
@@ -51,3 +73,4 @@ if __name__ == "__main__":
     test_stack_pop()
     test_size()
     test_peek()
+    test_stack()
